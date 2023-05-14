@@ -11,7 +11,7 @@ body {
 
 p {
     margin-top: 1em ;
-    margin-bottom: 1em ;
+    margin-bottom: 2em ;
   }
 
 h1, h2, h4 {
@@ -63,7 +63,7 @@ nav {
 br {
     display: block; /* makes it have a width */
     content: ""; /* clears default height */
-    margin-top: 1em; /* change this to whatever height you want it */
+    margin-top: 0.4em; /* change this to whatever height you want it */
 }
 
 .left {
