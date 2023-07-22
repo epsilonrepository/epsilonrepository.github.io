@@ -6,6 +6,11 @@ body {
     padding-right: 5%;
 }
 
+.bulk {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
 * {
     color: #ffffff;
     font-family: 'Roboto Mono', monospace;
