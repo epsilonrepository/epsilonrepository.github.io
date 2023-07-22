@@ -110,13 +110,9 @@ footer {
 @media screen and (max-width: 481px){
     .home {
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         margin-left: 0;
         margin-right: 0;
-    }
-    
-    .block {
-        min-width: max(50%, 400px);
     }
 
   }
