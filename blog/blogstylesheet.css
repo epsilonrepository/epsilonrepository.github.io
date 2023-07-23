@@ -1,14 +1,14 @@
 body {
     background-color: #000000;
-    max-width: 1100px;
+    max-width: 1400px;
     margin: auto;
     padding-left: 5%;
     padding-right: 5%;
 }
 
 .bulk {
-    margin-left: 50px;
-    margin-right: 50px;
+    max-width: 55em;
+    margin: auto;
 }
 
 * {
