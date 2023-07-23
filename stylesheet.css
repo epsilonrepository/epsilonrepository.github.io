@@ -7,7 +7,7 @@ body {
 }
 
 .block {
-    min-width: min(max(50%, 400px), 100%);
+    min-width: max(50%, 400px);
 }
 
 .home {
@@ -111,6 +111,7 @@ footer {
     .home {
         display: flex;
         flex-wrap: wrap;
+        flex-direction: column;
         margin-left: 0;
         margin-right: 0;
     }
