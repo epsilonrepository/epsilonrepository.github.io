@@ -104,3 +104,8 @@ footer {
 .alignright {
 	float: right;
 }
+
+.mla {
+    margin-left: 40px; 
+    text-indent: -40px;
+}
