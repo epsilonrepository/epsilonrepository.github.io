@@ -47,7 +47,7 @@ h2 {
     margin-bottom: 0;
 }
 
-a:hover {
+a:hover, a:hover>i {
     color: #cc2196;
 }
 

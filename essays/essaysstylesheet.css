@@ -19,9 +19,10 @@ body {
 p {
     margin-top: 1em ;
     margin-bottom: 1em ;
+    text-indent: 40px;
   }
 
-h1, h2, h4 {
+h1, h2, h2>i, h4 {
     color: #cc2196;
 }
 
@@ -105,7 +106,11 @@ footer {
 	float: right;
 }
 
-.mla {
-    margin-left: 40px; 
+.mla>p, .mla>ul {
     text-indent: -40px;
+    margin-left: 40px; 
+}
+.mla>ul>li {
+    margin-top: 1em ;
+    margin-bottom: 1em ;
 }
