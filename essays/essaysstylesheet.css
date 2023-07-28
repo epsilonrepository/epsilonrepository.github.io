@@ -4,6 +4,7 @@ body {
     margin: auto;
     padding-left: 5%;
     padding-right: 5%;
+    
 }
 
 .bulk {
@@ -23,7 +24,7 @@ p {
     text-indent: 40px;
   }
 
-h1, h2, h2>i, h4 {
+h1, h2, h2>i, h4, h4>a {
     color: #cc2196;
 }
 
@@ -110,12 +111,10 @@ footer {
 .mla>p, .mla>ul {
     text-indent: -40px;
     margin-left: 40px; 
+    max-width: calc(100% - 2em);
 }
 .mla>ul>li {
     margin-top: 1em ;
     margin-bottom: 1em ;
-}
-
-.poem>br {
-    margin-top: 0em
+    overflow-wrap: break-word;
 }
