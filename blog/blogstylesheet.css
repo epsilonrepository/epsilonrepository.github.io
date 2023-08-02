@@ -6,6 +6,10 @@ body {
     padding-right: 5%;
 }
 
+header>ul>li>a{
+    color:#ff00ae
+}
+
 .bulk {
     max-width: 55em;
     margin: auto;
@@ -22,7 +26,7 @@ p {
   }
 
 h1, h2, h4 {
-    color: #cc2196;
+    color: #ff00ae;
 }
 
 h1 {

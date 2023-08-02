@@ -7,6 +7,10 @@ body {
     
 }
 
+header>ul>li>a{
+    color:#ff00ae
+}
+
 .bulk {
     max-width: 55em;
     margin: auto;
@@ -25,7 +29,7 @@ p {
   }
 
 h1, h2, h2>i, h4, h4>a {
-    color: #cc2196;
+    color: #ff00ae;
 }
 
 h1 {
@@ -43,12 +47,8 @@ h3 {
     margin-top: 2em ;
 }
 
-a {
-    font-size: 16px;
-}
-
 a:hover, a:hover>i {
-    color: #cc2196;
+    color: #ff00ae;
 }
 
 ul {
@@ -56,6 +56,10 @@ ul {
     display: inline-block;
     margin: 0;
     padding: 0;
+}
+
+header>ul{
+    margin-top: 35px;
 }
 
 dt {
@@ -68,6 +72,10 @@ dd {
 li {
     display: list-item;
     padding-right: 3px;
+}
+
+header>ul>li{
+    display: inline;
 }
 
 nav {

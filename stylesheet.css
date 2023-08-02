@@ -6,6 +6,10 @@ body {
     padding-right: 5%;
 }
 
+header>ul>li>a{
+    color:#ff00ae
+}
+
 .block {
     width: max(47%, 380px);
     margin-right: 3%;
@@ -18,9 +22,34 @@ body {
     margin-right: 50px;
 }
 
+.home>.block>h2{
+    margin-top: 1em ;
+    margin-bottom: 0;
+}
+
 .bulk {
     max-width: 55em;
     margin: auto;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+.essay>p{
+    text-indent: 40px;
+}
+
+.poem>p{
+    margin-bottom: 2em ;
+}
+.poem>p>br{
+    margin-top: 0.4em;
+}
+
+.music>h3{
+    margin-bottom: 0;
+}
+.music>p{
+    margin-top: 0.5em ;
 }
 
 * {
@@ -33,8 +62,8 @@ p {
     margin-bottom: 1em ;
   }
 
-h1, h2, h4 {
-    color: #cc2196;
+h1, h2, h2>i, h4, h4>a {
+    color: #ff00ae;
 }
 
 h1 {
@@ -43,20 +72,29 @@ h1 {
 
 h2 {
     font-size: 30px;
-    margin-top: 1em ;
-    margin-bottom: 0;
+    margin-top: 0.5em ;
+    margin-bottom: 0.5em ;
+}
+
+h3 {
+    font-size: 22px;
+    margin-bottom: 1em ;
+    margin-top: 2em ;
 }
 
 a:hover, a:hover>i {
-    color: #cc2196;
+    color: #ff00ae;
 }
 
 ul {
     list-style-type: none;
     display: inline-block;
     margin: 0;
-    margin-top: 35px;
     padding: 0;
+}
+
+header>ul{
+    margin-top: 35px;
 }
 
 dt {
@@ -67,8 +105,12 @@ dd {
 }
 
 li {
-    display: inline;
+    display: list-item;
     padding-right: 3px;
+}
+
+header>ul>li{
+    display: inline;
 }
 
 nav {
@@ -107,6 +149,17 @@ footer {
 }
 .alignright {
 	float: right;
+}
+
+.mla>p, .mla>ul {
+    text-indent: -40px;
+    margin-left: 40px; 
+    max-width: calc(100% - 2em);
+}
+.mla>ul>li {
+    margin-top: 1em ;
+    margin-bottom: 1em ;
+    overflow-wrap: break-word;
 }
 
 @media screen and (max-width: 481px){
