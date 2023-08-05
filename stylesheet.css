@@ -1,3 +1,7 @@
+html{ 
+    padding-bottom: 25px;
+}
+
 body {
     background-color: #000000;
     max-width: 1400px;
@@ -14,14 +18,12 @@ header>ul>li>a{
     width: max(47%, 380px);
     margin-right: 3%;
 }
-
 .home {
     display: flex;
     flex-wrap: wrap;
     margin-left: 50px;
     margin-right: 50px;
 }
-
 .home>.block>h2{
     margin-top: 1em ;
     margin-bottom: 0;
