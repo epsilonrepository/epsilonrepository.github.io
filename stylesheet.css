@@ -2,6 +2,15 @@ html{
     padding-bottom: 25px;
 }
 
+::selection {
+    color: white;
+    background: #d40292; /* WebKit/Blink Browsers */
+  }
+  ::-moz-selection {
+    color: white;
+    background: #d40292; /* Gecko Browsers */
+  }
+
 body {
     background-color: #000000;
     max-width: 1400px;
