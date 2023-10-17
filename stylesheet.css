@@ -191,3 +191,21 @@ footer {
         margin-right: 0;
     }
   }
+
+/* Works on Firefox */
+* {
+    scrollbar-color: black white;
+  }
+  
+/* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: black;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: white;
+  }
