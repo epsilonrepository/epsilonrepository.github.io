@@ -35,7 +35,7 @@ header>ul>li>a{
 }
 .home>.block>h2{
     margin-top: 1em ;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 .home>.block>ul{
     margin-left: 35px;
