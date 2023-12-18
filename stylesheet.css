@@ -153,7 +153,7 @@ nav {
 }
 
 .nav-links {
-    padding: 11px 0;
+    padding-top: 11px;
 }
 .nav-links li{
     display: inline-block;
@@ -162,10 +162,6 @@ nav {
 .nav-links li a{
     color: #ff00ae;
 }
-.nav-links li.current-page {
-    font-weight: bold;
-    color: white;
-  }
 
 br {
     display: block; /* makes it have a width */
@@ -224,6 +220,16 @@ footer {
         width: 100%;
         margin-right: 0;
     }
+
+    nav {
+        display: grid;
+        align-items: start;
+    }
+    
+    .nav-links {
+        padding-top: 11px;
+    }
+
   }
 
 /* Works on Firefox */
@@ -233,7 +239,7 @@ footer {
   
 /* Works on Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
-    width: 12px;
+    width: 1vw;
   }
   
   *::-webkit-scrollbar-track {
