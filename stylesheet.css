@@ -169,6 +169,10 @@ nav {
 .nav-links li a{
     color: #ff00ae;
 }
+.current-page {
+    color: white;
+    font-weight: bold;
+}
 
 br {
     display: block; /* makes it have a width */
