@@ -4,9 +4,10 @@ html{
 
 :root {
     --primary: #ff00ae; 
-}
-
-
+    --back: black;
+    --front: white;
+ }
+ 
 ::selection {
     color: white;
     background: #d40292; /* WebKit/Blink Browsers */
@@ -17,7 +18,7 @@ html{
   }
 
 body {
-    background-color: #000000;
+    background-color: var(--back);
     max-width: 1400px;
     margin: auto;
     padding-left: 5%;
@@ -83,7 +84,7 @@ header>ul>li>a{
 }
 
 * {
-    color: white;
+    color: var(--front);
     font-family: 'Roboto Mono', monospace;
 }
 
@@ -175,7 +176,7 @@ nav {
     color: var(--primary);
 }
 .current-page {
-    color: white;
+    color: var(--front);
     font-weight: bold;
 }
 
@@ -255,7 +256,7 @@ footer {
 
 /* Works on Firefox */
 * {
-    scrollbar-color: black white;
+    scrollbar-color: var(--front) var(--back);
   }
   
 /* Works on Chrome, Edge, and Safari */
@@ -264,9 +265,9 @@ footer {
   }
   
   *::-webkit-scrollbar-track {
-    background: black;
+    background: var(--back);
   }
   
   *::-webkit-scrollbar-thumb {
-    background-color: white;
+    background-color: var(--front);
   }
