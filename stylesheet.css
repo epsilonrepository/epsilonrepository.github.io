@@ -93,6 +93,10 @@ p {
     margin-bottom: 1em ;
   }
 
+.quote>p {
+    margin-left: 40px;
+  }
+
 h1, h2, h2>i, h4, h4>a {
     color: var(--primary);
 }
@@ -184,6 +188,10 @@ br {
     display: block; /* makes it have a width */
     content: ""; /* clears default height */
     margin-top: 1em; /* change this to whatever height you want it */
+}
+
+footer>p>br{
+    margin-top:0
 }
 
 .left {
