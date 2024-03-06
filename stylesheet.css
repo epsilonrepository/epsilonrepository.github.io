@@ -4,17 +4,18 @@ html{
 
 :root {
     --primary: #ff00ae; 
+    --primary2: #d40292; 
     --back: black;
     --front: white;
  }
  
 ::selection {
-    color: white;
-    background: #d40292; /* WebKit/Blink Browsers */
+    color: var(--front);
+    background: var(--primary2); /* WebKit/Blink Browsers */
   }
   ::-moz-selection {
-    color: white;
-    background: #d40292; /* Gecko Browsers */
+    color: var(--front);
+    background: var(--primary2); /* Gecko Browsers */
   }
 
 body {
@@ -26,7 +27,7 @@ body {
 }
 
 header>ul>li>a{
-    color: var(--primary)
+    color: var(--primary);
 }
 
 .block {
@@ -81,6 +82,10 @@ header>ul>li>a{
 }
 .music>p{
     margin-top: 0.5em ;
+}
+.music>figure{
+    margin-left:0;
+    margin-bottom: 0.5em;
 }
 
 * {
@@ -190,10 +195,6 @@ br {
     margin-top: 1em; /* change this to whatever height you want it */
 }
 
-footer>p>br{
-    margin-top:0
-}
-
 .left {
     float: left;
 }
@@ -212,6 +213,32 @@ header {
 footer {
     margin-top: 40px;
     box-sizing: border-box;
+}
+footer>p>br{
+    margin-top:0
+}
+
+details > summary{
+    list-style-type: none;
+    font-weight: bold;
+}
+details > summary:hover{
+    color: var(--primary);
+    cursor:pointer;
+}
+details > summary::before {
+    content: "+ ";
+  }
+details[open] > summary::before {
+    content: "− ";
+  }
+.music > details{
+    margin-left:20px;
+}
+details[open] > .poem {
+    padding-left: 15px;
+    margin-left: 4px;
+    border-left: 1px solid var(--front);
 }
 
 .alignleft {
