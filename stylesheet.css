@@ -181,11 +181,9 @@ nav {
     display: inline-block;
     margin: 0 2px;
 }
-.nav-links li a{
-    color: var(--primary);
-}
+
 .current-page {
-    color: var(--front);
+    color: var(--primary);
     font-weight: bold;
 }
 
