@@ -257,6 +257,11 @@ details[open] > .poem {
     overflow-wrap: break-word;
 }
 
+.ref{
+    text-decoration-line: none;
+    color: var(--primary);
+}
+
 @media (max-width: 1100px){
     nav {
         display: grid;
