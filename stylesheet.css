@@ -93,6 +93,26 @@ header>ul>li>a{
     font-family: 'Roboto Mono', monospace;
 }
 
+br {
+    display: block; /* makes it have a width */
+    content: ""; /* clears default height */
+    margin-top: 1em; /* change this to whatever height you want it */
+}
+
+.page-title{
+    margin-top: 32px;
+    margin-bottom: 32px;
+    text-align: center;
+}
+.page-title>h2{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.page-title>h5{
+    margin-top: 8px;
+    margin-bottom: 8px;    
+}
+
 p {
     margin-top: 1em ;
     margin-bottom: 1em ;
@@ -102,27 +122,39 @@ p {
     margin-left: 40px;
   }
 
-h1, h2, h2>i, h4, h4>a {
+h1 { /* website title */
+    font-size: 50px;
+    margin: 0;
     color: var(--primary);
 }
 
-h1 {
-    font-size: 50px;
-    margin: 0;
+h2 { /* title */
+    font-size: 32px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    color: var(--primary);
 }
 
-h2 {
-    font-size: 30px;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em ;
+h3 { /* heading */
+    font-size: 24px;
+    margin-bottom: 12px;
+    margin-top: 36px;
+    color: var(--front);
 }
 
-h3 {
-    font-size: 22px;
-    margin-bottom: 0.5em ;
-    margin-top: 1.5em ;
+h4 { /* subheading */
+    font-size: 16px;
+    color: var(--primary);
 }
 
+h5 { /* subtitle */
+    font-size: 20px;
+    color: var(--primary);
+}
+
+a {
+    transition: color 0.3s; 
+}
 a:hover, a:hover>i {
     color: var(--primary);
 }
@@ -138,14 +170,6 @@ li {
     margin: 0.5em 0em;  
 }
 
-
-dt {
-    margin-top: 20px;
-}
-dd {
-    margin-top: 10px;
-}
-
 header>ul{
     margin-top:45px;
     padding: 0;
@@ -154,9 +178,16 @@ header>ul>li{
     display: inline;
     padding-right: 3px;
 }
-
 ol>li{
     margin-bottom:1em;
+}
+
+
+dt {
+    margin-top: 20px;
+}
+dd {
+    margin-top: 10px;
 }
 
 nav {
@@ -185,20 +216,6 @@ nav {
 .current-page {
     color: var(--primary);
     font-weight: bold;
-}
-
-br {
-    display: block; /* makes it have a width */
-    content: ""; /* clears default height */
-    margin-top: 1em; /* change this to whatever height you want it */
-}
-
-.left {
-    float: left;
-}
-
-.right {
-    float: right;
 }
 
 .clear {
@@ -239,13 +256,6 @@ details[open] > .poem {
     border-left: 1px solid var(--front);
 }
 
-.alignleft {
-	float: left;
-}
-.alignright {
-	float: right;
-}
-
 .mla>p, .mla>ul {
     text-indent: -40px;
     margin-left: 40px; 
@@ -271,9 +281,7 @@ details[open] > .poem {
     .nav-links {
         padding-top: 11px;
         text-align: left;
-
     }
-
   }
 
 @media screen and (max-width: 481px){
@@ -289,7 +297,6 @@ details[open] > .poem {
         width: 100%;
         margin-right: 0;
     }
-
   }
 
 /* Works on Firefox */
@@ -301,11 +308,9 @@ details[open] > .poem {
   *::-webkit-scrollbar {
     width: 1vw;
   }
-  
   *::-webkit-scrollbar-track {
     background: var(--back);
   }
-  
   *::-webkit-scrollbar-thumb {
     background-color: var(--front);
   }
