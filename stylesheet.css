@@ -42,7 +42,6 @@ header>ul>li>a{
     justify-content: center;
     align-items:start;
     gap: 3%;
-    border:1px solid red;
 }
 .home>.block>h2{
     margin-top: 0em;
