@@ -20,22 +20,33 @@ html{
 
 body {
     background-color: var(--back);
-    max-width: 1400px;
     margin: auto;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 
 header>ul>li>a{
     color: var(--primary);
 }
 
+hr{
+    margin-left: -5vw;
+    margin-right: -5vw;
+    height: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    border-top: 1px solid var(--front);
+}
+
 .block {
-    width: max(42%, 380px);
+    width: min(42%, 550px);
     margin-bottom: 3%;
     padding: 24px;
-    border:1px solid white;
+    border: 1px solid var(--front);
+    background: var(--back);
 }
+
 .home {
     display: flex;
     flex-wrap: wrap;
@@ -151,14 +162,15 @@ h4 { /* subheading */
 
 h5 { /* subtitle */
     font-size: 20px;
-    color: var(--primary);
+    color: var(--front);
 }
 
 a, a>i {
-    transition: color 0.3s; 
+    transition: color 0.3s, text-shadow 0.3s ease-out; 
 }
 a:hover, a:hover>i {
     color: var(--primary);
+    text-shadow: 0 0 1em var(--primary);
 }
 
 ul {
