@@ -141,7 +141,7 @@ h1 { /* website title */
     color: var(--primary);
 }
 
-h2 { /* title */
+h2, h2>i { /* title */
     font-size: 32px;
     margin-top: 16px;
     margin-bottom: 16px;
@@ -163,6 +163,11 @@ h4 { /* subheading */
 h5 { /* subtitle */
     font-size: 20px;
     color: var(--front);
+}
+
+sup>a{
+    color:var(--primary);
+    text-decoration: none;
 }
 
 a, a>i {
