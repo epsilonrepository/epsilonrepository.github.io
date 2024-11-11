@@ -4,7 +4,9 @@ html{
 
 :root {
     --primary: #ff00ae; 
-    --primary2: #d40292; 
+    --antiprimary: #00ff51;
+    --primary2: #d40292;
+    --antiprimary2: #2bfd6d; 
     --back: black;
     --front: white;
  }
@@ -38,7 +40,9 @@ hr{
     border-bottom: 0px;
     border-top: 1px solid var(--front);
 }
-
+.bulk>hr{
+    margin-top: 2em;
+}
 .block {
     width: min(42%, 550px);
     margin-bottom: 3%;

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Politics as Games final | The Epsilon Project</title>
+    <link rel="icon" type="image/x-icon" href="https://epsilonrepository.github.io/favicon.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../../stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono" rel="stylesheet">
+    <script src=""></script>
+    <script defer src="../../main.js"></script>
+</head>
+<body>
+<my-header-3></my-header-3>
+    <div class="page-title">
+        <h2>Reevaluating the Median Voter Theorem Through Cost-Benefit Analysis To Understand U.S. Candidate Polarization</h2>
+        <h5>Politics as Games [Final project; December 15, 2023]</h5>
+    </div>
+<div class="bulk">
+    <div class="essay">
+        <h3>Background</h3>
+            <p>The median voter theorem stipulates that “no alternative can beat the one preferred by the median voter in pair-wise majority rule elections if the number of voters is odd, voter preferences are single-peaked over a single-policy dimension, and voters vote sincerely.” (Clark et al 429). Anthony Downs showed that this results in both parties converging to the position of the median voter, at which point they are at a Nash equilibrium (Clark et al 430). </p>
+            <center><figure style="display: block; margin-left: auto; margin-right: auto;">
+                <img src="images/imageA.png" style="width:40%; display:inline-block; margin: 0.5em auto;">
+                <img src="images/imageB.png" style="width:40%; display:inline-block; margin: 0.5em auto;">
+            </figure></center>
+            <p>However, this is not what we see in the real world. Focusing on the United States, both national politicians and the American public have been becoming more polarized for decades (DeSilver; Pew Research Center). But while the House and Senate are bimodal in their ideological distributions (GovTrack), the American public is unimodal (Pew Research Center), which implies that national politicians are not simply reflecting the ideologies of voters but have adapted a strategy away from the median voter. </p>
+            <p>I aim to show that by treating voting as a cost-benefit analysis with the ability to abstain, ideological difference in a two-party system with a normal distribution of ideologies (like the United States) in the voting population can be a party system at equilibrium. </p>
+        <h3>Model</h3>
+            <p>Ideologies will be values between 0 to 100, where 0 is the most left-wing ideology, while 100 is the most right-wing ideology. Voters, the two candidates, and the status quo will each be assigned an ideology.</p>
+            <p>The voter will have three pure strategies: vote for candidate A, vote for candidate B, or abstain from voting. If the voter votes in a way where candidate A wins, the payoff will be calculated by subtracting the difference between candidate A's ideology and the voter's ideology from the difference between the status quo and the voter's ideology, or in other words, how far the ideology score of reality will move towards the voter's preferred ideology if candidate A wins. If the voter votes in a way where candidate B wins, it follows the same calculations, but with candidate B's ideology score. If the voter doesn't abstain &mdash; that is, they vote for either A or B &mdash; they will incur a cost of going out to vote. We will also assume that if the votes are tied, the winner will be randomly decided, with each candidate having a 50% chance of winning.</p>
+            <figure style="display: block; margin-left: auto; margin-right: auto;">
+                <img src="images/table1.png" style="width:100%; display:block; margin: 0.5em auto; filter: invert(100%)">
+            </figure>
+            <p>There are five possible conditions under which someone can vote, depending on if and how their vote alone decides the election. The payoffs are laid out in the following table. Let n<sub>B</sub> be the number of voters for candidate B, and t<sub>B</sub> be the number of voters candidate B needs to win (their tipping point). Let S equal the ideology of the status quo, V equal the voter's ideology, C<sub>A</sub> and C<sub>B</sub> be the ideologies of candidates A and B respectively, and K equal the cost of voting (expressed as a positive number).<sup><a href=#note1 id=text1>[1]</a></sup></p>
+            <p>	For simplicity, the model will only use the payoffs for n<sub>B</sub> = t<sub>B</sub>, or equivalently, where the voter acts as if all other voters are tied and they are the deciding vote. With this condition, for a voter to vote for candidate A,</p>
+            <figure style="display: block; margin-left: auto; margin-right: auto;">
+                <img src="images/imageC.png" style="width:20%; display:block; margin: 0.5em auto; background-color: white; filter: invert(100%);">
+            </figure>
+            <p style="text-indent:0;">This shows that, according to these payoffs and conditions, one's rational voting behavior does not depend on the status quo.</p>
+            <p>To determine equilibrium ideological positions for candidates A and B, simulated elections with 3001 normally distributed voters acting according to these payoffs were conducted in the programming language R.</p>
+            <center><figure style="display: block; margin-left: auto; margin-right: auto;">
+                <img src="images/imageD.png" style="margin-left: 1em; width:35%; display:inline-block; margin: 0.5em auto;">
+                <img src="images/imageE.png" style="margin-left: 1em; width:25%; display:inline-block; margin: 0.5em auto;">
+                <img src="images/imageF.png" style="margin-left: 1em; width:25%; display:inline-block; margin: 0.5em auto;">
+            </figure></center>
+            <p>Simulation 1 assigned to voters ideological scores between 0 and 100 (to 3 decimal places), according to a normal distribution<sup><a href="#note2" id=text2>[2]</a></sup> with a mean of 50 and standard deviation of 20 (see distribution in figure 1). This reflects the distribution of voters circa 1995. A cost of 10.4 was assigned.<sup><a href="#note3" id=text3>[3]</a></sup> An election was conducted for each possible pairing of integer ideological scores ranging from 0 to 100 for both candidates: a total of 10,201 elections. Vote shares (out of all votes, not including abstentions) were calculated for each candidate. The vote shares for candidate A are shown in figure 2.<sup><a href="#note4" id="text4">[4]</a></sup> There is a strip of undefined vote shares where all voters abstained, which occurred when half of the difference between candidate A and candidate B's ideologies was less than the cost.</p>
+            <p>From these results, it was calculated at each pairing of ideological scores whether each candidate had an incentive to deviate; candidate A does not have an incentive to deviate if, given candidate B's ideology, candidate A is at the integer ideology that maximizes their vote share. If neither candidate has an incentive to deviate, they are at Nash equilibrium. Shown in Figure 3, the Nash equilibria occur when the distance between the candidates' ideologies is 21. Nash equilibria only occur with ideologies in the inclusive range of between 30 and 71.</p>
+            <p>Simulation 2 was identical to Simulation 1, except that it doubled the standard deviation of the voter population, bringing it to 40. This is meant to reflect a more polarized populace, like in modern US politics. However, Simulation 2 had identical Nash equilibria to Simulation 1.</p>
+            <center><figure style="display: block; margin-left: auto; margin-right: auto;">
+                <img src="images/imageG.png" style="margin-left: 1em; width:35%; display:inline-block; margin: 0.5em auto;">
+                <img src="images/imageH.png" style="margin-left: 1em; width:25%; display:inline-block; margin: 0.5em auto;">
+            </figure></center>            
+            <p>Simulation 3 was also identical to Simulation 1, except that it doubled the cost of voting, bringing it to 20.8. Simulation 3 did have differing Nash equilibria. The Nash equilibria occur when the distance between the candidates' ideologies is 42, and with ideologies in the inclusive range of between 9 and 91.</p>
+            <center><figure style="display: block; margin-left: auto; margin-right: auto;">
+                <img src="images/imageI.png" style="margin-left: 1em; width:35%; display:inline-block; margin: 0.5em auto;">
+                <img src="images/imageJ.png" style="margin-left: 1em; width:25%; display:inline-block; margin: 0.5em auto;">
+                <img src="images/imageK.png" style="margin-left: 1em; width:25%; display:inline-block; margin: 0.5em auto;">
+            </figure></center>
+            <p>Simulation 4 was also identical to Simulation 1, but the mean of the distribution was changed to 60. The Nash Equilibria again occurred when the distance between the candidates' ideologies was 21, but they occurred with the ideologies in the inclusive range of between 39 and 80.</p>
+        <h3>Discussion</h3>
+            <p>My model demonstrates that, by introducing a cost to voting and by giving voters the ability to abstain from voting, two candidates with ideological differences can be at Nash equilibrium. In fact, with a positive, non-zero cost, there needs to be ideological difference for the candidates to be at equilibrium.</p>
+            <p>The Nash equilibria occur when the distance between the candidate's ideologies is (the integer above) twice the cost, within the range from (the integer above) the median voter's ideology minus twice the cost to (the integer below) the median voter's ideology plus twice the cost.</p>
+            <p>I didn't expect the positions of the Nash equilibria &mdash; the equilibrium polarization of the candidates &mdash; to not depend on the polarization of the voter population, but rather only on the cost of voting (along with the median voter). The rationale makes sense in hindsight: people won't bother to go out to vote if there isn't a substantial difference between the candidates. This potentially suggests that voter suppression is increasing candidate polarization in the United States. Since 2013 &mdash; when <i>Shelby County v. Holder</i> eliminated the Justice Department's authority to block changes to state voting laws &mdash; there has been a rise in discriminatory voter laws (Bradner). However, these laws target populations that tend to vote for Democrats more than Republicans, which the model doesn't account for with its single cost value.</p>
+            <p>There are other limitations to the model. In reality, when there are two ideologically similar candidates, we do not see zero votes. This discrepancy could be because there is a level of individual cost unaccounted for in the model, or because a one-dimensional ideological score is unrealistic. Introducing variation to the cost and more dimensions to the ideology scores could remedy this drop-off issue. However, it is unclear whether or not the Nash equilibria will be candidate pairings with ideological difference in a more realistic model where there are still votes (albeit fewer votes) in the range with ideologically similar candidates.</p>
+            <p>Additionally, the model only uses the payoffs where voters act as if they are the deciding vote. A more comprehensive model could account for imperfect information by weighing the payoffs to account for the probabilities of each condition, although it is unclear what those probabilities should be.</p>
+            <p>In a way, the model extends the median voter theorem, because the Nash equilibrium values still surround the median voter, but with a distance related to the cost of voting. Additionally, the winner at these equilibria is the candidate closest to the median.</p>
+    </div>
+        <h3>Notes</h3>
+        <p><a href="#text1" id="note1" style="color:var(--primary); text-decoration: none;">[1]</a> Note that what matters for the voter's decision is their perception of these variables rather than reality.</p>
+        <p><a href="#text2" id="note2" style="color:var(--primary); text-decoration: none;">[2]</a> Distributions were made with seed 706.</p>
+        <p><a href="#text3" id="note3" style="color:var(--primary); text-decoration: none;">[3]</a> Simulation errors occur with an integer cost or an integer cost plus one half.</p>
+        <p><a href="#text4" id="note4" style="color:var(--primary); text-decoration: none;">[4]</a> The graph for candidate B is just the vote share of candidate A subtracted from 1, or alternatively, the graph of candidate A's vote share reflected upon the line y=x.</p>
+
+    <div class="mla">
+        <h3>Work Cited</h3>
+        <p>Bradner, Eric. “Discriminatory voter laws have surged in last 5 years, federal commission finds.” <i>CNN</i>, 12 September 2018, <a href="https://edition.cnn.com/2018/09/12/politics/voting-rights-federal-commission-election/index.html">https://edition.cnn.com/2018/09/12/politics/voting-rights-federal-commission-election/index.html</a>. Accessed 15 December 2023.</p>
+        <p>DeSilver, Drew. “The polarization in today's Congress has roots that go back decades.” <i>Pew Research Center</i>, 10 March 2022, <a href="https://www.pewresearch.org/short-reads/2022/03/10/the-polarization-in-todays-congress-has-roots-that-go-back-decades/">https://www.pewresearch.org/short-reads/2022/03/10/the-polarization-in-todays-congress-has-roots-that-go-back-decades/</a>. Accessed 4 December 2023.</p>
+        <p>GovTrack. “Report Cards for 2022 - Ideology Score - All Representatives.” <i>GovTrack</i>, 12 February 2023, <a href="https://www.govtrack.us/congress/members/report-cards/2022/house/ideology">https://www.govtrack.us/congress/members/report-cards/2022/house/ideology</a>. Accessed 4 December 2023.</p>
+        <p>GovTrack. “Report Cards for 2022 - Ideology Score - All Senators.” <i>GovTrack</i>, 12 February 2023, <a href="https://www.govtrack.us/congress/members/report-cards/2022/senate/ideology">https://www.govtrack.us/congress/members/report-cards/2022/senate/ideology</a>. Accessed 4 December 2023.</p>
+        <p>Pew Research Center. “Political Polarization in the American Public.” <i>Pew Research Center</i>, 12 June 2014, <a href="https://www.pewresearch.org/politics/2014/06/12/political-polarization-in-the-american-public/">https://www.pewresearch.org/politics/2014/06/12/political-polarization-in-the-american-public/</a>. Accessed 4 December 2023.</p>
+    </div>
+</div>
+<footer>
+    <hr>
+    <center><h4 style="margin-bottom:0">SCHOOL: Y2S1</h4></center>
+</footer>
+</body>
+</html> 
