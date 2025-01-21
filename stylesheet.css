@@ -42,6 +42,7 @@ hr{
 }
 .bulk>hr{
     margin-top: 2em;
+    margin-bottom: 2em;
 }
 .block {
     width: min(42%, 550px);
