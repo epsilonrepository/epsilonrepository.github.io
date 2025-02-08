@@ -131,6 +131,10 @@ br {
     margin-bottom: 8px;    
 }
 
+.page-info{
+    text-align:center;
+}
+
 p {
     margin-top: 1em ;
     margin-bottom: 1em ;
