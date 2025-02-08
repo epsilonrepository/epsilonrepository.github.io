@@ -130,9 +130,19 @@ br {
     margin-top: 8px;
     margin-bottom: 8px;    
 }
+.page-title>h2>br{
+    margin: 0;
+}
 
 .page-info{
     text-align:center;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+.page-info>h4{
+    margin-top: 0;
+    margin-bottom: 0;
+
 }
 
 p {
