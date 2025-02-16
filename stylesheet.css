@@ -142,13 +142,11 @@ br {
 .page-info{
     margin-top: 2em;
     margin-bottom: 1em;
+    text-align:center;
 }
 .page-info>h4{
     margin-top: 0;
     margin-bottom: 0;
-    text-align:center;
-
-
 }
 
 p {
