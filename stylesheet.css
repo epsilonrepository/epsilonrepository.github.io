@@ -241,6 +241,7 @@ td {
     padding-left: 2em;
     padding-right: 2em;
     line-height:1.5em;
+    padding-bottom: 1em;
   } 
 th {
     padding-left: 2em;
@@ -252,9 +253,6 @@ td:nth-child(1){
     text-align:left;
   }
 td:nth-child(2){
-    text-align:center;
-  }
-td:nth-child(3){
     text-align:right;
   }
 
