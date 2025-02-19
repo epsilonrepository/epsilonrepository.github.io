@@ -281,9 +281,9 @@ nav {
     margin: 0 2px;
 }
 
-.current-page {
-    color: var(--primary);
+.current-page, .current-page>a {
     font-weight: bold;
+    font-size: 24px;
 }
 
 .clear {
