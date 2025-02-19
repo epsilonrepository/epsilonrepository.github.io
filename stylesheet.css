@@ -7,6 +7,8 @@ html{
     --antiprimary: #00ff51;
     --primary2: #d40292;
     --antiprimary2: #2bfd6d; 
+    --link: #8ad0fe;
+    --link2: #3783ff;
     --back: black;
     --front: white;
  }
@@ -70,7 +72,7 @@ hr{
 .home>.block>ul>li{
     margin-top: 0.5em;
     margin-bottom: 1em;
-    line-height: 1.2em;
+    line-height: 1em;
 }
 .home>.block>h3{
     font-size: 22px;
@@ -196,10 +198,12 @@ sup>a{
 
 a, a>i {
     transition: color 0.3s, text-shadow 0.3s ease-out; 
+    color: var(--link);
+    text-decoration: none;
 }
 a:hover, a:hover>i {
-    color: var(--primary);
-    text-shadow: 0 0 1em var(--primary);
+    color: var(--link2);
+    text-shadow: 0 0 1em var(--link2);
 }
 
 ul {
@@ -232,6 +236,27 @@ dt {
 dd {
     margin-top: 10px;
 }
+
+td {
+    padding-left: 2em;
+    padding-right: 2em;
+    line-height:1.5em;
+  } 
+th {
+    padding-left: 2em;
+    padding-right: 2em;
+    height: 0;
+  }
+
+td:nth-child(1){
+    text-align:left;
+  }
+td:nth-child(2){
+    text-align:center;
+  }
+td:nth-child(3){
+    text-align:right;
+  }
 
 nav {
     display: flex;
