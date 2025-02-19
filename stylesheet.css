@@ -233,19 +233,16 @@ dd {
 }
 
 td {
-    padding-left: 2em;
-    padding-right: 2em;
-    line-height:1.5em;
+    line-height:1em;
     padding-bottom: 1em;
   } 
 th {
-    padding-left: 2em;
-    padding-right: 2em;
     height: 0;
   }
 
 td:nth-child(1){
     text-align:left;
+    padding-right:1vw;
   }
 td:nth-child(2){
     text-align:right;
