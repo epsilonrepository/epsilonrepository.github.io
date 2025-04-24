@@ -12,6 +12,7 @@ class MyHeader extends HTMLElement {
                         <li><a href="/music/index.html">music</a></li>  
                         <li><a href="/poetry/index.html">poetry</a></li>  
                         <li><a href="/misc/index.html">misc</a></li>  
+                        <li><a href="/external/index.html">external</a></li>  
                     </ul>
                 </nav>
             <hr>
@@ -35,6 +36,8 @@ class MyHeader1 extends HTMLElement {
                         <li><a href="music/index.html">music</a></li>  
                         <li><a href="poetry/index.html">poetry</a></li>  
                         <li><a href="misc/index.html">misc</a></li>  
+                        <li><a href="external/index.html">external</a></li>  
+
                     </ul>
                 </nav>
             <hr>
@@ -60,6 +63,7 @@ class MyHeader2 extends HTMLElement {
                         <li id="music"><a href="../music/index.html">music</a></li>  
                         <li id="poetry"><a href="../poetry/index.html">poetry</a></li>  
                         <li id="misc"><a href="../misc/index.html">misc</a></li>  
+                        <li id="external"><a href="../external/index.html">external</a></li>  
                     </ul>
                 </nav>
             <hr>
@@ -99,6 +103,7 @@ class MyHeader3 extends HTMLElement {
                         <li id="music"><a href="../../music/index.html">music</a></li>  
                         <li id="poetry"><a href="../../poetry/index.html">poetry</a></li>  
                         <li id="misc"><a href="../../misc/index.html">misc</a></li>  
+                        <li id="external"><a href="../../external/index.html">external</a></li>  
                     </ul>
                 </nav>
             <hr>

@@ -192,13 +192,12 @@ h5 { /* subtitle */
 }
 
 a, a>i {
-    transition: color 0.3s, text-shadow 0.3s ease-out; 
     color: var(--link);
     text-decoration: none;
 }
 a:hover, a:hover>i {
     color: var(--link2);
-    text-shadow: 0 0 1em var(--link2);
+    text-decoration: underline;
 }
 
 ul {
@@ -330,7 +329,7 @@ details[open] > .poem {
     color: var(--primary);
 }
 
-@media (max-width: 1200px){
+@media (max-width: 1400px){
     nav {
         display: grid;
         align-items: start;
