@@ -3,7 +3,7 @@ class MyHeader extends HTMLElement {
         this.innerHTML = `
             <header>
                 <nav>
-                    <h1 class="nav-title"> THE EPSILON REPOSITORY </h1>
+                    <h1 class="nav-title"> EPSILON REPOSITORY </h1>
                     <ul class="nav-links">
                         <li><a href="/index.html">home</a></li>
                         <li><a href="/blog/index.html">blog</a></li>  
@@ -13,7 +13,6 @@ class MyHeader extends HTMLElement {
                         <li><a href="/poetry/index.html">poetry</a></li>  
                         <li><a href="/misc/index.html">misc</a></li>  
                         <li><a href="/external/index.html">external</a></li>  
-                    </ul>
                 </nav>
             <hr>
             </header>   
@@ -27,7 +26,7 @@ class MyHeader1 extends HTMLElement {
         this.innerHTML = `
             <header>
                 <nav>
-                    <h1 class="nav-title"> THE EPSILON REPOSITORY </h1>
+                    <h1 class="nav-title"> EPSILON REPOSITORY </h1>
                     <ul class="nav-links">
                         <li><a href="index.html">home</a></li>
                         <li><a href="blog/index.html">blog</a></li>  
@@ -37,10 +36,8 @@ class MyHeader1 extends HTMLElement {
                         <li><a href="poetry/index.html">poetry</a></li>  
                         <li><a href="misc/index.html">misc</a></li>  
                         <li><a href="external/index.html">external</a></li>  
-
                     </ul>
                 </nav>
-            <hr>
             </header>   
         `
     }
@@ -54,7 +51,7 @@ class MyHeader2 extends HTMLElement {
         this.innerHTML = `
             <header>
                 <nav>
-                    <h1 class="nav-title"> THE EPSILON REPOSITORY </h1>
+                    <h1 class="nav-title"> EPSILON REPOSITORY </h1>
                     <ul class="nav-links">
                         <li id="home"><a href="../index.html">home</a></li>
                         <li id="blog"><a href="../blog/index.html">blog</a></li>  
@@ -66,7 +63,6 @@ class MyHeader2 extends HTMLElement {
                         <li id="external"><a href="../external/index.html">external</a></li>  
                     </ul>
                 </nav>
-            <hr>
             </header>   
         `;
         let path = window.location.pathname;
@@ -94,7 +90,7 @@ class MyHeader3 extends HTMLElement {
         this.innerHTML = `
             <header>
                 <nav>
-                    <h1 class="nav-title"> THE EPSILON REPOSITORY </h1>
+                    <h1 class="nav-title"> EPSILON REPOSITORY </h1>
                     <ul class="nav-links">
                         <li id="home"><a href="../../index.html">home</a></li>
                         <li id="blog"><a href="../../blog/index.html">blog</a></li>  
@@ -106,7 +102,6 @@ class MyHeader3 extends HTMLElement {
                         <li id="external"><a href="../../external/index.html">external</a></li>  
                     </ul>
                 </nav>
-            <hr>
             </header>   
         `;
         let path = window.location.pathname;
