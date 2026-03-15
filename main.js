@@ -1,9 +1,11 @@
+document.title = document.title + " | Edward's Repository";
+
 class MyHeader extends HTMLElement {
     connectedCallback(){
         this.innerHTML = `
             <header>
                 <nav>
-                    <h1 class="nav-title"> EPSILON REPOSITORY </h1>
+                    <h1 class="nav-title"> EDWARD'S REPOSITORY </h1>
                     <ul class="nav-links">
                         <li><a href="/index.html">home</a></li>
                         <li><a href="/blog/index.html">blog</a></li>  
@@ -26,7 +28,7 @@ class MyHeader1 extends HTMLElement {
         this.innerHTML = `
             <header>
                 <nav>
-                    <h1 class="nav-title"> EPSILON REPOSITORY </h1>
+                    <h1 class="nav-title"> EDWARD'S REPOSITORY </h1>
                     <ul class="nav-links">
                         <li><a href="index.html">home</a></li>
                         <li><a href="blog/index.html">blog</a></li>  
@@ -51,7 +53,7 @@ class MyHeader2 extends HTMLElement {
         this.innerHTML = `
             <header>
                 <nav>
-                    <h1 class="nav-title"> EPSILON REPOSITORY </h1>
+                    <h1 class="nav-title"> EDWARD'S REPOSITORY </h1>
                     <ul class="nav-links">
                         <li id="home"><a href="../index.html">home</a></li>
                         <li id="blog"><a href="../blog/index.html">blog</a></li>  
@@ -90,7 +92,7 @@ class MyHeader3 extends HTMLElement {
         this.innerHTML = `
             <header>
                 <nav>
-                    <h1 class="nav-title"> EPSILON REPOSITORY </h1>
+                    <h1 class="nav-title"> EDWARD'S REPOSITORY </h1>
                     <ul class="nav-links">
                         <li id="home"><a href="../../index.html">home</a></li>
                         <li id="blog"><a href="../../blog/index.html">blog</a></li>  
