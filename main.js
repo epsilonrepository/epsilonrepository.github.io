@@ -24,6 +24,20 @@ if (document.getElementById('home-info-btn')) {
         }
     });
 }
+
+// ** screen glow **
+document.body.insertAdjacentHTML('afterbegin', `
+    <div class="screen-glow">
+        <svg style="position:absolute;width:0;height:0">
+            <filter id="noise">
+                <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="3" stitchTiles="stitch"/>
+                <feColorMatrix type="saturate" values="0"/>
+                <feBlend in="SourceGraphic" mode="darken"/>
+            </filter>
+        </svg>
+    </div>
+`);
+
 // ** nav substitutions **
 
 class MyHeader extends HTMLElement {

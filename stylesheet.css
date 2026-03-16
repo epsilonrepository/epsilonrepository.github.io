@@ -7,7 +7,7 @@ html{
     --antiprimary: #00ff51;
     --primary2: #d40292;
     --antiprimary2: #2bfd6d; 
-    --primaryshadow: #ff00ae77;
+    --primaryshadow: #6c1e53;
     --link: #7bc1ff;
     --link2: #1d83dc;
     --linkshadow: #274864;
@@ -38,14 +38,8 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 0;
-    background: radial-gradient(ellipse at center, transparent 50%, rgba(212, 2, 146, 0.3) 100%);
-    animation: glowFadeIn 1.5s ease forwards;
-    opacity: 0;
-}
-@keyframes glowFadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    z-index: -1;
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(212, 2, 146, 0.3) 100%);
 }
 .screen-glow::after {
     content: '';
@@ -142,7 +136,7 @@ body.home header.slide-up {
 }
 
 #home-info-btn {
-    background: var(--back);
+    background: transparent;
     color: var(--link);
     border: 2px solid var(--link);
     border-radius: 50%;
@@ -179,8 +173,9 @@ body.home header.slide-up {
 .bulk {
     width: 50em;
     max-width: 80vw;
-    margin-left: 1em;
-    margin-right: 1em;
+    margin:auto;
+    padding-left: 1em;
+    padding-right: 1em;
     margin-bottom: 2em;
     margin-top: 2em;
 }
@@ -269,7 +264,7 @@ h1, h1>a, h1>a:hover { /* website title */
     text-decoration: none;
 }
 h1>a, h1>a:hover {
-    text-shadow: 0 0 10px var(--primaryshadow);
+    text-shadow: 0 0 5px var(--primaryshadow);
 }
 
 h2, h2>i { /* title */
