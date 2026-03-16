@@ -11,38 +11,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono" rel="stylesheet">
     <script defer src="main.js"></script>
 </head>
-<body> 
-<header>
-    <nav>
-        <h1 class="nav-title"> EDWARD'S REPOSITORY </h1>
-        <ul class="nav-links">
-            <li class="current-page">home</li>
-            <li><a href="blog/index.html">blog</a></li>  
-            <li><a href="essays/index.html">essays</a></li>  
-            <li><a href="school/index.html">school</a></li>  
-            <li><a href="music/index.html">music</a></li>  
-            <li><a href="poetry/index.html">poetry</a></li>  
-            <li><a href="misc/index.html">misc</a></li>  
-            <li><a href="external/index.html">external</a></li>  
-        </ul>
-    </nav>
-</header>
-<div class="home">
-    <div class="block" style="width:fit-content; padding: 10px 24px; margin-bottom: 0em; margin-top: 2em; margin-left:5em; margin-right:5em;">
-    <center><p style="font-size: 18px;"><b>Welcome! I'm Edward, and this is my general-purpose repository.</b></p></center>
+<body class="home">
+    <div class="screen-glow">
+        <svg style="position:absolute;width:0;height:0">
+            <filter id="noise">
+                <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="3" stitchTiles="stitch"/>
+                <feColorMatrix type="saturate" values="0"/>
+                <feBlend in="SourceGraphic" mode="darken"/>
+            </filter>
+        </svg>
     </div>
-</div>
-<div class="bulk" style="margin-top: 0%;">
-        <p>I'll put anything substantial that I create here, whether I think it's good or bad or somewhere in-between. The repository is supposed to be all-encompassing but also organized. I also keep my blog here, which I view as the combination of a public diary, prose poetry, philosophical buds, and a dumping ground.</p>
-        <p>Unless I explicitly mark something otherwise, everything on here is my intellectual property. I store things here as a resource for curiosity and inspiration, not for theft.</p>
-        <p>Currently, I would prefer that you don't share this project. Though once I die, feel free to share this far and wide!</p>
-</div>
-<div class="bulk" style="margin-bottom: 5em; margin-top: 5em;">
-    <center>
-        <h2>Questions? Comments? Concerns?</h2>
-        <h3 style="margin-top: 0.5em; font-size: 19px;">Email me: <a href= mailto:epsilonrepository@gmail.com>epsilonrepository@gmail.com</a></h3>
-        <p>(I can't guarantee I'll see it though)</p>
-    </center>  
-</div>
+    <header>
+        <nav class="home-nav"> 
+            <h1 class="home-title">EDWARD'S REPOSITORY</h1>
+                <a href="blog/index.html" style="--i:0">blog</a>
+                <a href="essays/index.html" style="--i:1">essays</a>
+                <a href="school/index.html" style="--i:2">school</a>  
+                <a href="music/index.html" style="--i:3">music</a>  
+                <a href="poetry/index.html" style="--i:4">poetry</a>  
+                <a href="misc/index.html" style="--i:5">misc</a>  
+                <a href="external/index.html" style="--i:6">external</a>
+        </nav>
+    </header>
+
+    <button id="home-info-btn">?</button>
+
+    <section id="home-info" class="home-info-section">
+            <center>
+                <h3 style="width:fit-content; margin-bottom: 0.5em; margin-top: 2.5em;">Welcome to my general-purpose repository!</h2>
+                    <p>I'll put anything substantial that I create here, whether I think it's good or bad or somewhere in-between. The repository is supposed to be all-encompassing but also organized. I also keep my blog here, which I view as the combination of a public diary, prose poetry, philosophical buds, and a dumping ground.</p>
+                    <p>Unless I explicitly mark something otherwise, everything on here is my intellectual property. I store things here as a resource for curiosity and inspiration, not for theft.</p>
+                    <p>Currently, I would prefer that you don't share this project. Though once I die, I don't care &mdash; share it far and wide!</p>
+                <h3 style="margin-top: 2em;">Questions? Comments? Concerns?</h2>   
+                    <p>Email me: <a href= mailto:epsilonrepository@gmail.com>epsilonrepository@gmail.com</a></h3>
+            </center>  
+        </div>
+    </section>
+
 </body>
 </html> 

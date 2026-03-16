@@ -1,13 +1,38 @@
+// ** adding website title to tab titles **
 document.title = document.title + " | Edward's Repository";
+
+// ** page home javascript **
+if (document.getElementById('home-info-btn')) {
+    let infoVisible = false;
+
+    document.getElementById('home-info-btn').addEventListener('click', () => {
+        const header = document.querySelector('header');
+        const btn = document.getElementById('home-info-btn');
+
+        infoVisible = !infoVisible;
+
+        if (infoVisible) {
+            header.classList.add('slide-up');
+            document.getElementById('home-info').classList.add('slide-up');
+            btn.classList.add('info-visible');
+            btn.innerHTML = '&uparrow;';
+        } else {
+            header.classList.remove('slide-up');
+            document.getElementById('home-info').classList.remove('slide-up');
+            btn.classList.remove('info-visible');
+            btn.innerHTML = '?';
+        }
+    });
+}
+// ** nav substitutions **
 
 class MyHeader extends HTMLElement {
     connectedCallback(){
         this.innerHTML = `
             <header>
                 <nav>
-                    <h1 class="nav-title"> EDWARD'S REPOSITORY </h1>
+                    <h1 class="nav-title"> <a href="/index.html">EDWARD'S REPOSITORY</a> </h1>
                     <ul class="nav-links">
-                        <li><a href="/index.html">home</a></li>
                         <li><a href="/blog/index.html">blog</a></li>  
                         <li><a href="/essays/index.html">essays</a></li>  
                         <li><a href="/school/index.html">school</a></li>  
@@ -15,6 +40,7 @@ class MyHeader extends HTMLElement {
                         <li><a href="/poetry/index.html">poetry</a></li>  
                         <li><a href="/misc/index.html">misc</a></li>  
                         <li><a href="/external/index.html">external</a></li>  
+                    </ul>
                 </nav>
             <hr>
             </header>   
@@ -28,9 +54,8 @@ class MyHeader1 extends HTMLElement {
         this.innerHTML = `
             <header>
                 <nav>
-                    <h1 class="nav-title"> EDWARD'S REPOSITORY </h1>
+                    <h1 class="nav-title"> <a href="index.html">EDWARD'S REPOSITORY</a> </h1>
                     <ul class="nav-links">
-                        <li><a href="index.html">home</a></li>
                         <li><a href="blog/index.html">blog</a></li>  
                         <li><a href="essays/index.html">essays</a></li>  
                         <li><a href="school/index.html">school</a></li>  
@@ -53,9 +78,8 @@ class MyHeader2 extends HTMLElement {
         this.innerHTML = `
             <header>
                 <nav>
-                    <h1 class="nav-title"> EDWARD'S REPOSITORY </h1>
+                    <h1 class="nav-title"> <a href="../index.html">EDWARD'S REPOSITORY</a> </h1>
                     <ul class="nav-links">
-                        <li id="home"><a href="../index.html">home</a></li>
                         <li id="blog"><a href="../blog/index.html">blog</a></li>  
                         <li id="essays"><a href="../essays/index.html">essays</a></li>  
                         <li id="school"><a href="../school/index.html">school</a></li>  
@@ -92,9 +116,8 @@ class MyHeader3 extends HTMLElement {
         this.innerHTML = `
             <header>
                 <nav>
-                    <h1 class="nav-title"> EDWARD'S REPOSITORY </h1>
+                    <h1 class="nav-title"><a href="../../index.html">EDWARD'S REPOSITORY</a></h1>
                     <ul class="nav-links">
-                        <li id="home"><a href="../../index.html">home</a></li>
                         <li id="blog"><a href="../../blog/index.html">blog</a></li>  
                         <li id="essays"><a href="../../essays/index.html">essays</a></li>  
                         <li id="school"><a href="../../school/index.html">school</a></li>  
