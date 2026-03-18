@@ -40,28 +40,33 @@ document.body.insertAdjacentHTML('afterbegin', `
 
 // ** nav substitutions **
 
-class MyHeader extends HTMLElement {
-    connectedCallback(){
-        this.innerHTML = `
-            <header>
-                <nav>
-                    <h1 class="nav-title"> <a href="/index.html">EDWARD'S REPOSITORY</a> </h1>
-                    <ul class="nav-links">
-                        <li><a href="/blog/index.html">blog</a></li>  
-                        <li><a href="/essays/index.html">essays</a></li>  
-                        <li><a href="/school/index.html">school</a></li>  
-                        <li><a href="/music/index.html">music</a></li>  
-                        <li><a href="/poetry/index.html">poetry</a></li>  
-                        <li><a href="/misc/index.html">misc</a></li>  
-                        <li><a href="/external/index.html">external</a></li>  
-                    </ul>
-                </nav>
-            <hr>
-            </header>   
-        `
-    }
+function buildCrumbs() {
+  const parts = window.location.pathname
+    .split('/')
+    .filter(p => p && p !== 'index.html' && !p.includes('.'));
+
+  let path = '/';
+  const items = [
+  ];
+
+  for (const part of parts) {
+    path += part + '/';
+    items.push(`<li><a href="${path}">${part}</a></li>`);
+  }
+
+  return items.join('<li class="sep">/</li>');
 }
-customElements.define('my-header', MyHeader)
+
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.createElement('header');
+    header.innerHTML = `
+        <nav>
+            <h1 class="nav-title"><a href="/index.html">EDWARD'S REPOSITORY</a></h1>
+            <ul class="breadcrumb">${buildCrumbs()}</ul>
+        </nav>
+    `;
+    document.body.prepend(header);
+});
 
 class MyHeader1 extends HTMLElement {
     connectedCallback(){
