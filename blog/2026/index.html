@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2026</title>
+    <link rel="icon" type="image/x-icon" href="https://epsilonrepository.github.io/favicon.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../../stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono" rel="stylesheet">
+    <script defer src="../../main.js"></script>
+</head>
+<body>
+    <screen-glow></screen-glow>
+    <div class="blog-home">
+        <center>
+            <table style="width:min(90vw, 800px);">
+                <tr><th style="min-width:20%;"></th><th></th></tr>
+                <tbody id="blog-rows"></tbody>
+            </table>
+        </center>
+    </div>
+
+    <script src="../blog.js"></script>
+    <script>
+        const posts = [...POSTS].reverse().filter(p => p.date.startsWith("2026"));
+
+        document.getElementById("blog-rows").innerHTML = posts.map(p => `
+            <tr>
+                <td>${p.date}</td>
+                <td><a href="${p.file.split('/')[1]}">${p.title}</a></td>
+            </tr>
+        `).join("");
+    </script>
+</body>
+</html>

@@ -1,7 +1,7 @@
-// ** adding website title to tab titles **
+// ** ADDING WEBSITE TITLE TO TAB TITLES **
 document.title = document.title + " | Edward's Repository";
 
-// ** page home javascript **
+// ** HOME PAGE **
 if (document.getElementById('home-info-btn')) {
     let infoVisible = false;
 
@@ -25,7 +25,7 @@ if (document.getElementById('home-info-btn')) {
     });
 }
 
-// ** screen glow **
+// ** SCREEN GLOW **
 document.body.insertAdjacentHTML('afterbegin', `
     <div class="screen-glow">
         <svg style="position:absolute;width:0;height:0">
@@ -38,130 +38,57 @@ document.body.insertAdjacentHTML('afterbegin', `
     </div>
 `);
 
-// ** nav substitutions **
+// ** NAV SUBSTITUTIONS **
+
+const SECTIONS = ['blog', 'essays', 'school', 'music', 'poetry', 'misc', 'external'];
 
 function buildCrumbs() {
-  const parts = window.location.pathname
-    .split('/')
-    .filter(p => p && p !== 'index.html' && !p.includes('.'));
+    const pathname = window.location.pathname;
+    const isIndex = pathname.endsWith('/') || pathname.endsWith('index.html');
+    const parts = pathname
+        .split('/')
+        .filter(p => p && p !== 'index.html' && !p.includes('.'));
+    if (isIndex && parts.length > 0) parts.pop(); // drop last folder, title replaces it
+    let path = '/';
+    const items = [];
+    for (const part of parts) {
+        path += part + '/';
+        items.push(`<li><a href="${path}">${part}</a></li>`);
+    }
+    return items.join('<li class="sep">/</li>');
+}
 
-  let path = '/';
-  const items = [
-  ];
-
-  for (const part of parts) {
-    path += part + '/';
-    items.push(`<li><a href="${path}">${part}</a></li>`);
-  }
-
-  return items.join('<li class="sep">/</li>');
+function isSecondLevelIndex() {
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    return parts.length === 1 || (parts.length === 2 && parts[1] === 'index.html');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    if (document.body.classList.contains('no-header')) return;
     const header = document.createElement('header');
-    header.innerHTML = `
-        <nav>
-            <h1 class="nav-title"><a href="/index.html">EDWARD'S REPOSITORY</a></h1>
-            <ul class="breadcrumb">${buildCrumbs()}</ul>
-        </nav>
-    `;
+
+    if (isSecondLevelIndex()) {
+        const current = window.location.pathname.split('/').filter(Boolean)[0];
+        const links = SECTIONS
+            .map(s => s === current
+                ? `<li class="current-page">${s}</li>`
+                : `<li><a href="/${s}/">${s}</a></li>`)
+            .join('');
+        header.innerHTML = `
+            <nav class="section-nav-header">
+                <h1 class="nav-title"><a href="/index.html">EDWARD'S REPOSITORY</a></h1>
+                <ul class="breadcrumb section-nav">${links}</ul>
+            </nav>
+        `;
+    } else {
+        const pageTitle = document.title.replace(" | Edward's Repository", "");
+            header.innerHTML = `
+                <nav>
+                    <h1 class="nav-title"><a href="/index.html">EDWARD'S REPOSITORY</a></h1>
+                    <ul class="breadcrumb">/ ${buildCrumbs()} /  <h2 class="page-title">${pageTitle}</h2></ul>
+                </nav>                
+            `;
+    }
+
     document.body.prepend(header);
 });
-
-class MyHeader1 extends HTMLElement {
-    connectedCallback(){
-        this.innerHTML = `
-            <header>
-                <nav>
-                    <h1 class="nav-title"> <a href="index.html">EDWARD'S REPOSITORY</a> </h1>
-                    <ul class="nav-links">
-                        <li><a href="blog/index.html">blog</a></li>  
-                        <li><a href="essays/index.html">essays</a></li>  
-                        <li><a href="school/index.html">school</a></li>  
-                        <li><a href="music/index.html">music</a></li>  
-                        <li><a href="poetry/index.html">poetry</a></li>  
-                        <li><a href="misc/index.html">misc</a></li>  
-                        <li><a href="external/index.html">external</a></li>  
-                    </ul>
-                </nav>
-            </header>   
-        `
-    }
-}
-customElements.define('my-header-1', MyHeader1)
-
-// *****LAYER 2 HEADERS*****
-
-class MyHeader2 extends HTMLElement {
-    connectedCallback(){
-        this.innerHTML = `
-            <header>
-                <nav>
-                    <h1 class="nav-title"> <a href="../index.html">EDWARD'S REPOSITORY</a> </h1>
-                    <ul class="nav-links">
-                        <li id="blog"><a href="../blog/index.html">blog</a></li>  
-                        <li id="essays"><a href="../essays/index.html">essays</a></li>  
-                        <li id="school"><a href="../school/index.html">school</a></li>  
-                        <li id="music"><a href="../music/index.html">music</a></li>  
-                        <li id="poetry"><a href="../poetry/index.html">poetry</a></li>  
-                        <li id="misc"><a href="../misc/index.html">misc</a></li>  
-                        <li id="external"><a href="../external/index.html">external</a></li>  
-                    </ul>
-                </nav>
-            </header>   
-        `;
-        let path = window.location.pathname;
-        const index = path.indexOf("epsilonrepository.github.io");
-
-        if (index !== -1) {
-            path = path.substring(index + "epsilonrepository.github.io".length);
-        } 
-        
-        const folder = path.split('/')[1];
-        if (folder) {
-            const currentPage = document.getElementById(folder);
-            if (currentPage) {
-                currentPage.classList.add('current-page');
-            }
-        }
-    }
-}
-customElements.define('my-header-2', MyHeader2);
-
-// *****LAYER 3 HEADERS*****
-
-class MyHeader3 extends HTMLElement {
-    connectedCallback(){
-        this.innerHTML = `
-            <header>
-                <nav>
-                    <h1 class="nav-title"><a href="../../index.html">EDWARD'S REPOSITORY</a></h1>
-                    <ul class="nav-links">
-                        <li id="blog"><a href="../../blog/index.html">blog</a></li>  
-                        <li id="essays"><a href="../../essays/index.html">essays</a></li>  
-                        <li id="school"><a href="../../school/index.html">school</a></li>  
-                        <li id="music"><a href="../../music/index.html">music</a></li>  
-                        <li id="poetry"><a href="../../poetry/index.html">poetry</a></li>  
-                        <li id="misc"><a href="../../misc/index.html">misc</a></li>  
-                        <li id="external"><a href="../../external/index.html">external</a></li>  
-                    </ul>
-                </nav>
-            </header>   
-        `;
-        let path = window.location.pathname;
-        const index = path.indexOf("epsilonrepository.github.io");
-
-        if (index !== -1) {
-            path = path.substring(index + "epsilonrepository.github.io".length);
-        } 
-        
-        const folder = path.split('/')[1];
-        if (folder) {
-            const currentPage = document.getElementById(folder);
-            if (currentPage) {
-                currentPage.classList.add('current-page');
-            }
-        }
-    }
-}
-customElements.define('my-header-3', MyHeader3);
